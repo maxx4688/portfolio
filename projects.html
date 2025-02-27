@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish's Projects - Creative Developer Portfolio</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ashish's signature" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="mailto:alexmaxx4688@gmail.com">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My Projects</h1>
+
+        <div class="filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="web">Web Development</button>
+            <button class="filter-button" data-filter="mobile">Mobile Apps</button>
+            <button class="filter-button" data-filter="design">UI/UX Design</button>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <img src="to_doo.png" alt="Project 1" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">To doo</h2>
+                    <p class="project-description">An extraordinary note keeping app for tracking your daily activities.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Dart</span>
+                        <span class="project-tag">Flutter</span>
+                        <span class="project-tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile">
+                <img src="https://source.unsplash.com/random/400x200?mobile-app" alt="Project 2" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Fitness Tracker App</h2>
+                    <p class="project-description">A mobile application that helps users track their workouts, nutrition, and progress towards fitness goals.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React Native</span>
+                        <span class="project-tag">Firebase</span>
+                        <span class="project-tag">Redux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">App Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <img src="https://source.unsplash.com/random/400x200?ui-design" alt="Project 3" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Smart Home Dashboard</h2>
+                    <p class="project-description">A sleek and intuitive dashboard design for controlling smart home devices and monitoring energy usage.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">Adobe XD</span>
+                        <span class="project-tag">Prototyping</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Design</a>
+                        <a href="#" class="project-link">Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web">
+                <img src="https://source.unsplash.com/random/400x200?dashboard" alt="Project 4" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Analytics Dashboard</h2>
+                    <p class="project-description">A comprehensive analytics dashboard for businesses to track key performance indicators and visualize data trends.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Vue.js</span>
+                        <span class="project-tag">D3.js</span>
+                        <span class="project-tag">AWS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile">
+                <img src="https://source.unsplash.com/random/400x200?travel-app" alt="Project 5" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Travel Planner App</h2>
+                    <p class="project-description">A mobile app that helps users plan their trips, discover local attractions, and share their experiences with friends.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Flutter</span>
+                        <span class="project-tag">Google Maps API</span>
+                        <span class="project-tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Play Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <img src="https://source.unsplash.com/random/400x200?branding" alt="Project 6" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Eco-Friendly Brand Identity</h2>
+                    <p class="project-description">A complete brand identity design for an eco-friendly startup, including logo, color palette, and marketing materials.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Illustrator</span>
+                        <span class="project-tag">Branding</span>
+                        <span class="project-tag">Print Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Behance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ashish. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+                    
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ashish's signature" class="logo">
+        <nav>
+            <a href="mailto:alexmaxx8055@gmail.com">Mail</a>
+            <a href="https://github.com/maxx4688">GitHub</a>
+            <a href="https://x.com/maxx4688">Twitter</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Hello, I'm Ashish</h1>
+            <p class="subtitle">Creative Developer & Designer</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </section>
+        
+        <div class="sections">
+            <a href="about.html">
+            <section class="section" id="about">
+                <h2>About Me</h2>
+                <p>I'm a passionate creator who combines technical expertise with creative vision to build exceptional digital experiences.</p>
+            </section>
+        </a>
+<a href="projects.html">
+            <section class="section" id="projects">
+                <h2>My projects</h2>
+                <p>Explore my portfolio of projects that showcase my skills in development and design.</p>
+            </section>
+        </a>
+
+            <section class="section" id="contact">
+                <h2>Contact</h2>
+                <p>Interested in working together? Let's connect and discuss your next project.</p>
+            </section>
+
+            <section class="section" id="contact">
+                <h2>Contact</h2>
+                <p>Interested in working together? Let's connect and discuss your next project.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ashish. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

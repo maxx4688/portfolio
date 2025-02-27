@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Ashish - Interactive Portfolio</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ashish's signature" class="logo">
+        <nav>
+            <a href="mailto:alexmaxx4688@gmail.com">Mail</a>
+            <a href="https://github.com/maxx4688">GitHub</a>
+            <a href="https://x.com/maxx4688">Twitter</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>About Ashish</h1>
+            <p class="subtitle">Creative Developer & Problem Solver</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </section>
+
+        <div class="sections">
+            <section class="section" id="journey">
+                <h2>My Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2018</h3>
+                        <p>Started learning web development</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2020</h3>
+                        <p>Landed my first developer job</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2022</h3>
+                        <p>Launched my first major project</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2024</h3>
+                        <p>Continuing to grow and innovate</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <p>Front-end Development</p>
+                        <div class="skill-bar-fill" style="width: 0%;" data-width="90%"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Back-end Development</p>
+                        <div class="skill-bar-fill" style="width: 0%;" data-width="80%"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>UI/UX Design</p>
+                        <div class="skill-bar-fill" style="width: 0%;" data-width="75%"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Database Management</p>
+                        <div class="skill-bar-fill" style="width: 0%;" data-width="85%"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Cloud Services</p>
+                        <div class="skill-bar-fill" style="width: 0%;" data-width="70%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="philosophy">
+                <h2>My Philosophy</h2>
+                <p>I believe in creating technology that enhances human experiences. Every project is an opportunity to learn, innovate, and make a positive impact. I'm passionate about clean code, intuitive design, and building solutions that stand the test of time.</p>
+                <p>My approach combines technical expertise with creative problem-solving, always keeping the end-user in mind. I strive to stay current with the latest technologies while maintaining a strong foundation in core principles.</p>
+            </section>
+
+            <section class="section" id="beyond-coding">
+                <h2>Beyond Coding</h2>
+                <p>When I'm not immersed in lines of code, you can find me:</p>
+                <ul>
+                    <li>Exploring nature trails and capturing landscape photography</li>
+                    <li>Experimenting with new recipes in the kitchen</li>
+                    <li>Diving into sci-fi and technology books</li>
+                    <li>Practicing mindfulness and meditation</li>
+                </ul>
+                <p>I believe in maintaining a healthy work-life balance and drawing inspiration from diverse experiences to fuel my creativity and problem-solving skills.</p>
+            </section>
+
+            <section class="section" id="contact">
+                <h2>Let's Connect</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out to me through any of the following channels:</p>
+                <ul>
+                    <li>Email: <a href="mailto:alexmaxx8055@gmail.com">alexmaxx8055@gmail.com</a></li>
+                    <li>GitHub: <a href="https://github.com/maxx4688">maxx4688</a></li>
+                    <li>Twitter: <a href="https://x.com/maxx4688">maxx4688</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ashish. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('.section');
+            const skillBars = document.querySelectorAll('.skill-bar-fill');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('skill-bar-fill')) {
+                            entry.target.style.width = entry.target.getAttribute('data-width');
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>
