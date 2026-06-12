@@ -3,74 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashish - Portfolio</title>
+    <title>Ashish — Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Ashish's signature" class="logo">
-        <!-- <nav>
-            <a href="mailto:alexmaxx8055@gmail.com">Mail</a>
-            <a href="https://github.com/maxx4688">GitHub</a>
-            <a href="https://x.com/maxx4688">Twitter</a>
-        </nav> -->
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Ashish's signature" class="logo">
+            </a>
+            <nav>
+                <a href="about.html" class="nav-link"><span>About</span></a>
+                <a href="projects.html" class="nav-link"><span>Projects</span></a>
+                <a href="contact.html" class="nav-link"><span>Contact</span></a>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Hello, I'm Ashish</h1>
-            <p class="subtitle">Creative Developer & Designer</p>
-            <a href="mailto:alexmaxx8055@gmail.com" class="cta-button">Get in Touch</a>
+            <p class="hero-label">Portfolio</p>
+            <h1>Hello, I'm <span class="highlight">Ashish</span></h1>
+            <p class="subtitle">Creative Developer &amp; Designer crafting thoughtful digital experiences.</p>
+            <div class="hero-actions">
+                <a href="projects.html" class="cta-button cta-primary">
+                    <span class="cta-shine"></span>
+                    <span class="cta-label">View Projects</span>
+                </a>
+                <a href="contact.html" class="cta-button cta-secondary">
+                    <span class="cta-fill"></span>
+                    <span class="cta-label">Get in Touch</span>
+                </a>
+            </div>
         </section>
-        
+
         <div class="sections">
-            <a href="about.html">
-            <section class="section" id="about">
-                <h2>About Ashish</h2>
-                <p>Visit to the special section that describes about me more than i can.</p>
-            </section>
-        </a>
-            <a href="projects.html">
-            <section class="section" id="projects">
-                <h2>My projects</h2>
-                <p>Explore my portfolio of projects that showcase my skills in development and design.</p>
-            </section>
-        </a>
+            <a href="about.html" class="section-card">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <span class="card-number">01</span>
+                        <h2>About</h2>
+                        <p>A closer look at my journey, skills, and the philosophy behind my work.</p>
+                        <span class="card-link">
+                            <span class="card-link-text">Explore profile</span>
+                            <span class="card-link-arrow" aria-hidden="true">→</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
 
-            <section class="section" id="contact">
-                <h2>Contact</h2>
-                <p>Interested in working together? Let's connect and discuss your next project.</p>
-            </section>
+            <a href="projects.html" class="section-card">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <span class="card-number">02</span>
+                        <h2>Projects</h2>
+                        <p>Selected work spanning app development, web design, and user interface craft.</p>
+                        <span class="card-link">
+                            <span class="card-link-text">View work</span>
+                            <span class="card-link-arrow" aria-hidden="true">→</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
 
-            <section class="section" id="contact">
-                <h2>Contact</h2>
-                <p>Interested in working together? Let's connect and discuss your next project.</p>
-            </section>
+            <a href="contact.html" class="section-card">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <span class="card-number">03</span>
+                        <h2>Contact</h2>
+                        <p>Open to collaborations, freelance projects, and conversations about new ideas.</p>
+                        <span class="card-link">
+                            <span class="card-link-text">Send a message</span>
+                            <span class="card-link-arrow" aria-hidden="true">→</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ashish. All rights reserved.</p>
+        <p>&copy; 2026 Ashish. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const sections = document.querySelectorAll('.section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

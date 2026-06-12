@@ -3,155 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Ashish - Interactive Portfolio</title>
-    <link rel="stylesheet" href="about.css">
+    <title>About Ashish — Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Ashish's signature" class="logo">
-        <!-- <nav>
-            <a href="mailto:alexmaxx4688@gmail.com">Mail</a>
-            <a href="https://github.com/maxx4688">GitHub</a>
-            <a href="https://x.com/maxx4688">Twitter</a>
-        </nav> -->
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Ashish's signature" class="logo">
+            </a>
+            <nav>
+                <a href="about.html" class="nav-link active"><span>About</span></a>
+                <a href="projects.html" class="nav-link"><span>Projects</span></a>
+                <a href="contact.html" class="nav-link"><span>Contact</span></a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>About Ashish</h1>
-            <p class="subtitle">Creative Developer & Problem Solver</p>
-            <a href="#contact" class="cta-button">Let's Connect</a>
+        <section class="hero hero-page">
+            <p class="hero-label">About Me</p>
+            <h1>About <span class="highlight">Ashish</span></h1>
+            <p class="subtitle">Creative Developer &amp; Problem Solver building thoughtful digital experiences.</p>
+            <div class="hero-actions">
+                <a href="contact.html" class="cta-button cta-primary">
+                    <span class="cta-shine"></span>
+                    <span class="cta-label">Let's Connect</span>
+                </a>
+                <a href="projects.html" class="cta-button cta-secondary">
+                    <span class="cta-fill"></span>
+                    <span class="cta-label">View Projects</span>
+                </a>
+            </div>
         </section>
 
-        <div class="sections">
-            <section class="section" id="journey">
-                <h2>My Tech path</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>2022</h3>
-                        <p>Got admission as HR specilization student.</p>
-                        <p class="timeline-sub">#October</p>
-                        <p>Started exploring Flutter and Dart.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>2023</h3>
-                        <p>Built my first working android app with Database and APIs.</p>
-                        <p class="timeline-sub">#March</p>
-                        <p>Started learning HTML and CSS.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>2024</h3>
-                        <p>Started working on major projects to learn and explore something new.</p>
-                        <p>Participated in many on-campus HR activities to build decision making and<br>conflict management in the working environment.</p>
-                        <p class="timeline-sub">#August</p>
-                        <p>Landed my first developer job as front-end app developer.</p>
-                        <p class="timeline-sub">#October</p>
-                        <p>Published my first app on GitHub and made publically accessible.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>2025</h3>
-                        <p>Started boosting the app reliability with neat and perfect user interface.</p>
-                        <p class="timeline-sub">#And continue...</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="skills">
-                <h2>Skills & Expertise</h2>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <p>Front-end App Development</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="70%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>Front-end Web Development</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="50%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>HR activities</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="80%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>Graphic Designer</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="85%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>UI/UX Design</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="75%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>Motion Designer</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="85%"></div>
-                    </div>
-                    <div class="skill-bar">
-                        <p>Logo Designer</p>
-                        <div class="skill-bar-fill" style="width: 0%;" data-width="70%"></div>
+        <div class="page-sections">
+            <article class="content-panel" id="journey">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <h2>My Tech Path</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h3>2022</h3>
+                                <p>Got admission as HR specialization student.</p>
+                                <p class="timeline-sub">#October</p>
+                                <p>Started exploring Flutter and Dart.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>2023</h3>
+                                <p>Built my first working Android app with database and APIs.</p>
+                                <p class="timeline-sub">#March</p>
+                                <p>Started learning HTML and CSS.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>2024</h3>
+                                <p>Started working on major projects to learn and explore something new.</p>
+                                <p>Participated in many on-campus HR activities to build decision making and conflict management in the working environment.</p>
+                                <p class="timeline-sub">#August</p>
+                                <p>Landed my first developer job as front-end app developer.</p>
+                                <p class="timeline-sub">#October</p>
+                                <p>Published my first app on GitHub and made it publicly accessible.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>2025</h3>
+                                <p>Started boosting app reliability with neat and polished user interfaces.</p>
+                                <p class="timeline-sub">#And continue...</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </article>
 
-            <section class="section" id="philosophy">
-                <h2>My Philosophy</h2>
-                <p>I believe in creating environment that improves working efficiency and the final output.<br>Every project is an opportunity to learn, innovate, and make a positive impact, whether it is Tech, Programming or Human Resource management.<br>I'm passionate about building perfect environment for continuous work progress and more refined output quality.</p>
-                <p>My approach combines formal group building with creative problem-solving to serve something by always keeping the end-user in mind. I strive to stay current with the latest technologies and approaches while maintaining a strong foundation in core principles.</p>
-                <br><p>I bealive in formal working environment to extract high quality output from it.</p>
-            </section>
-
-            <section class="section" id="beyond-coding">
-                <h2>Beyond Coding</h2>
-                <p class="timeline-sub">When I'm not immersed in lines of code and figuring out solution, you can find me:</p>
-                <ul>
-                    <li>Exploring nature trails and Capturing landscape beauties and freezing the moments.</li>
-                    <li>Filling out a White canvas to give my imagination a visual look to express others.</li>
-                    <li>Smashing heads of other players in FPS games</li>
-                    <li>Building a good Physical health for good mental health.</li>
-                </ul>
-            </section>
-
-            <section class="section" id="contact">
-                <h2>Let's Connect</h2>
-                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of.</p>
-                <ul>
-                    <div class="webs">
-                        <div class="socials">Mail</div>
-                        <div class="socials">GitHub</div>
-                        <div class="socials">Twitter</div>
-                        <div class="socials">Reddit</div>
-                        <div class="socials">Instagram</div>
+            <article class="content-panel" id="skills">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <h2>Skills &amp; Expertise</h2>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <p>Front-end App Development</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>Front-end Web Development</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="50%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>HR Activities</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>Graphic Design</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>UI/UX Design</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>Motion Design</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <p>Logo Design</p>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 0%;" data-width="70%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </ul>
-            </section>
+                </div>
+            </article>
+
+            <article class="content-panel" id="philosophy">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <h2>My Philosophy</h2>
+                        <p>I believe in creating environments that improve working efficiency and the final output. Every project is an opportunity to learn, innovate, and make a positive impact — whether in tech, programming, or human resource management.</p>
+                        <p>My approach combines formal group building with creative problem-solving, always keeping the end-user in mind. I strive to stay current with the latest technologies while maintaining a strong foundation in core principles.</p>
+                        <p>I believe in a formal working environment to extract high-quality output from it.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-panel" id="beyond-coding">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="card-content">
+                        <h2>Beyond Coding</h2>
+                        <p class="timeline-sub">When I'm not immersed in lines of code and figuring out solutions, you can find me:</p>
+                        <ul>
+                            <li>Exploring nature trails and capturing landscape beauties, freezing the moments.</li>
+                            <li>Filling out a white canvas to give my imagination a visual look to express to others.</li>
+                            <li>Smashing heads of other players in FPS games.</li>
+                            <li>Building good physical health for good mental health.</li>
+                        </ul>
+                        <a href="contact.html" class="panel-cta">Get in touch →</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ashish. All rights reserved.</p>
+        <p>&copy; 2026 Ashish. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const sections = document.querySelectorAll('.section');
-            const skillBars = document.querySelectorAll('.skill-bar-fill');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        if (entry.target.classList.contains('skill-bar-fill')) {
-                            entry.target.style.width = entry.target.getAttribute('data-width');
-                        }
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            skillBars.forEach(bar => {
-                observer.observe(bar);
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
