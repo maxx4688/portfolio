@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filterButtons = document.querySelectorAll('.filter-button');
     const projectCards = document.querySelectorAll('.project-card');
+    const projectsGrid = document.querySelector('.projects-grid');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -66,6 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+
+            if (projectsGrid) {
+                projectsGrid.setAttribute('data-filter', filter);
+            }
 
             projectCards.forEach(card => {
                 const match = filter === 'all' || card.getAttribute('data-category') === filter;
