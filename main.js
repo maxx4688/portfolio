@@ -82,4 +82,65 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    /* Image preview dialog for gallery posters */
+    const posterImages = document.querySelectorAll('.poster-item img, .project-poster-main img');
+    if (posterImages.length) {
+        const dialog = document.createElement('div');
+        dialog.className = 'image-dialog';
+        dialog.setAttribute('role', 'dialog');
+        dialog.setAttribute('aria-modal', 'true');
+        dialog.setAttribute('aria-label', 'Image preview');
+        dialog.innerHTML = `
+            <div class="image-dialog__panel">
+                <button type="button" class="image-dialog__close" aria-label="Close preview">&times;</button>
+                <img class="image-dialog__img" alt="">
+                <p class="image-dialog__caption"></p>
+            </div>
+        `;
+        document.body.appendChild(dialog);
+
+        const dialogImg = dialog.querySelector('.image-dialog__img');
+        const dialogCaption = dialog.querySelector('.image-dialog__caption');
+        const closeBtn = dialog.querySelector('.image-dialog__close');
+
+        const openDialog = (img) => {
+            const caption =
+                img.closest('.poster-item')?.querySelector('.poster-caption')?.textContent?.trim() ||
+                img.alt ||
+                '';
+
+            dialogImg.src = img.currentSrc || img.src;
+            dialogImg.alt = img.alt || caption;
+            dialogCaption.textContent = caption;
+            dialog.classList.add('is-open');
+            document.body.classList.add('dialog-open');
+            closeBtn.focus();
+        };
+
+        const closeDialog = () => {
+            dialog.classList.remove('is-open');
+            document.body.classList.remove('dialog-open');
+            dialogImg.removeAttribute('src');
+        };
+
+        posterImages.forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openDialog(img);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeDialog);
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog) closeDialog();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && dialog.classList.contains('is-open')) {
+                closeDialog();
+            }
+        });
+    }
 });
