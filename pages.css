@@ -362,7 +362,7 @@
     margin-bottom: 1.1rem;
     color: var(--text);
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    /* -webkit-line-clamp: 2; */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1088,6 +1088,222 @@ a.socials:hover::before {
 .poster-section {
     margin-top: 2.5rem;
     margin-bottom: 2rem;
+}
+
+/* ── Project video player ── */
+
+.project-video-section {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-video-section > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-video-section > p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.project-video-wrap {
+    display: block;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.project-video-inner {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.project-video {
+    display: block;
+    width: 100%;
+    max-height: min(70vh, 640px);
+    background: #000;
+    border-radius: 0;
+    /* vertical-align: middle; */
+}
+
+.project-video:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.project-video-wrap .card-content {
+    line-height: 0;
+}
+
+.project-video-wrap:hover .card-frame {
+    box-shadow: none;
+    border-color: var(--border);
+}
+
+.project-video-wrap:hover .card-spotlight,
+.project-video-wrap:hover .card-border {
+    opacity: 0;
+    animation: none;
+}
+
+.project-video-wrap:hover .card-shine {
+    left: -100%;
+}
+
+/* ── Light / Dark mode preview ── */
+.project-theme-section {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.project-theme-section > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-theme-section > p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.theme-preview-frame {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 12;
+    background: #000;
+}
+
+.theme-corner-btn {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(8px);
+    color: rgb(0, 184, 251);
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.25s var(--ease-out-expo), border-color 0.25s ease, background 0.25s ease;
+}
+
+.theme-corner-btn:hover {
+    border-color: rgb(0, 184, 251);
+    box-shadow: 0 0 20px 0 rgb(0, 184, 251);
+}
+
+.theme-corner-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.theme-preview-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-expo);
+}
+
+.theme-preview-img.is-active {
+    opacity: 1;
+}
+
+/* ── Web page screenshots (browser mockups) ── */
+.browser-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.browser-mock {
+    text-align: center;
+}
+
+.browser-mock-inner {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.browser-dots {
+    display: inline-flex;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+.browser-dots span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.browser-dots span:nth-child(1) { background: #ff5f57; }
+.browser-dots span:nth-child(2) { background: #febc2e; }
+.browser-dots span:nth-child(3) { background: #28c840; }
+
+.browser-url {
+    flex: 1;
+    min-width: 0;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.browser-viewport {
+    line-height: 0;
+    background: #fff;
+}
+
+.browser-viewport img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.browser-mock figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
 }
 
 .poster-section > h2 {
