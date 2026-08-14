@@ -1,4 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /* Smooth inertia scrolling (Lenis) */
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const lenisScript = document.createElement('script');
+        lenisScript.src = 'https://unpkg.com/lenis@1.1.14/dist/lenis.min.js';
+        lenisScript.onload = () => {
+            if (!window.Lenis) return;
+            const lenis = new window.Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+                touchMultiplier: 1.5,
+            });
+            const raf = (time) => {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            };
+            requestAnimationFrame(raf);
+        };
+        document.head.appendChild(lenisScript);
+    }
+
+    /* Light / dark theme toggle */
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+    if (themeToggleBtn) {
+        const root = document.documentElement;
+        const themeIcon = themeToggleBtn.querySelector('.theme-toggle-icon');
+        const syncToggle = (theme) => {
+            const isLight = theme === 'light';
+            if (themeIcon) themeIcon.textContent = isLight ? '\u263E' : '\u2600';
+            themeToggleBtn.setAttribute('aria-pressed', String(isLight));
+            themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+        };
+        syncToggle(root.getAttribute('data-theme') || 'dark');
+        themeToggleBtn.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            root.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            syncToggle(next);
+        });
+    }
+
     const tiltStrength = 10;
     const liftAmount = 8;
     const tiltSelectors = '.section-card, .content-panel, .project-card, .contact-card';
@@ -98,6 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
             lightImg?.classList.toggle('is-active', !isDark);
             darkImg?.classList.toggle('is-active', isDark);
             if (cornerIcon) cornerIcon.textContent = isDark ? '☾' : '☀';
+        });
+    }
+
+    /* Full-bleed home page video mute toggle */
+    const homeVideo = document.querySelector('.home-video-el');
+    const homeVideoMute = document.querySelector('.home-video-mute');
+    if (homeVideo && homeVideoMute) {
+        const muteIcon = homeVideoMute.querySelector('.home-video-mute-icon');
+        homeVideoMute.addEventListener('click', () => {
+            homeVideo.muted = !homeVideo.muted;
+            if (homeVideo.muted) {
+                homeVideo.play().catch(() => {});
+            }
+            homeVideoMute.setAttribute('aria-pressed', String(!homeVideo.muted));
+            homeVideoMute.setAttribute('aria-label', homeVideo.muted ? 'Unmute video' : 'Mute video');
+            if (muteIcon) muteIcon.textContent = homeVideo.muted ? '🔇' : '🔊';
         });
     }
 

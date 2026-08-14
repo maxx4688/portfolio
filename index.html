@@ -6,6 +6,7 @@
     <title>Ashish — Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
     <header>
@@ -17,6 +18,9 @@
                 <a href="about.html" class="nav-link"><span>About</span></a>
                 <a href="projects.html" class="nav-link"><span>Projects</span></a>
                 <a href="contact.html" class="nav-link"><span>Contact</span></a>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
+                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -91,6 +95,16 @@
             </a>
         </div>
     </main>
+
+    <section class="home-video">
+        <video class="home-video-el" autoplay muted loop playsinline preload="auto">
+            <source src="assets/todoo/todoo_ad.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button type="button" class="home-video-mute" aria-label="Unmute video" aria-pressed="false">
+            <span class="home-video-mute-icon" aria-hidden="true">🔇</span>
+        </button>
+    </section>
 
     <footer>
         <p>&copy; 2026 Ashish. All rights reserved.</p>
