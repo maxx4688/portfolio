@@ -282,34 +282,14 @@ h1 {
     box-shadow: 0 8px 32px rgba(255, 191, 15, 0.4);
 }
 
-.cta-primary .cta-shine {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: radial-gradient(circle at var(--bx, 50%) var(--by, 50%), rgba(255, 255, 255, 0.55) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
+.cta-primary .cta-shine,
 .cta-primary:hover .cta-shine {
-    opacity: 1;
+    display: none;
 }
 
-.cta-primary::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 80%;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
-    transform: skewX(-20deg);
-    transition: left 0.7s var(--ease-out-expo);
-}
-
+.cta-primary::after,
 .cta-primary:hover::after {
-    left: 140%;
+    display: none;
 }
 
 .cta-secondary {
@@ -457,31 +437,12 @@ h1 {
     animation: spinBorder 3s linear infinite;
 }
 
-.card-shine {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(
-        105deg,
-        transparent 20%,
-        rgba(255, 255, 255, 0.06) 45%,
-        rgba(255, 255, 255, 0.12) 50%,
-        rgba(255, 255, 255, 0.06) 55%,
-        transparent 80%
-    );
-    transform: skewX(-18deg);
-    transition: left 0.85s var(--ease-out-expo);
-}
-
+.card-shine,
 .section-card:hover .card-shine,
 .content-panel:hover .card-shine,
 .project-card:hover .card-shine,
 .contact-card:hover .card-shine {
-    left: 160%;
+    display: none;
 }
 
 .card-content {

@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll(tiltSelectors).forEach(card => {
-        if (card.classList.contains('project-video-wrap')) return;
+        if (card.classList.contains('project-video-wrap') || card.classList.contains('whats-new-card')) return;
         const frame = card.querySelector('.card-frame');
         if (!frame) return;
 

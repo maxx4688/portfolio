@@ -1153,6 +1153,171 @@ a.socials:hover::before {
     left: -100%;
 }
 
+/* ── What's New (platform showcase) ── */
+.whats-new-section {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.whats-new-section > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.65rem;
+}
+
+.whats-new-section > p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    max-width: 42rem;
+    line-height: 1.7;
+}
+
+.whats-new-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+    padding: 7.5rem 0 8rem;
+}
+
+.whats-new-card {
+    overflow: visible;
+}
+
+.whats-new-card .card-frame {
+    position: relative;
+    height: 200px;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    gap: 0 2.5rem;
+    padding: 1.75rem 2.5rem 1.75rem 0.75rem;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+}
+
+.whats-new-card:hover .card-frame {
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.whats-new-card .card-spotlight,
+.whats-new-card .card-border,
+.whats-new-card:hover .card-spotlight,
+.whats-new-card:hover .card-border {
+    display: none;
+}
+
+.whats-new-shot {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+.whats-new-shot img {
+    display: block;
+    width: auto;
+    height: 400px;
+    max-width: none;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
+    transform: none;
+    transition: transform 0.5s var(--ease-out-expo);
+}
+
+.whats-new-card:hover .whats-new-shot img {
+    transform: translateY(-6px);
+}
+
+.whats-new-wip {
+    display: none;
+}
+
+.whats-new-card .card-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0.25rem 0.5rem 0;
+    background: transparent;
+    border-top: none;
+    transform: none;
+}
+
+.whats-new-card:hover .card-content {
+    transform: none;
+}
+
+.whats-new-status {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--text-muted);
+    margin-bottom: 0.55rem;
+}
+
+.whats-new-status--ready,
+.whats-new-status--wip {
+    color: var(--text-muted);
+}
+
+.whats-new-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.02em;
+}
+
+.whats-new-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+    max-width: 36rem;
+}
+
+@media (max-width: 800px) {
+    .whats-new-grid {
+        gap: 12rem;
+        padding: 6rem 0 7rem;
+    }
+
+    .whats-new-card .card-frame {
+        grid-template-columns: 130px 1fr;
+        height: 160px;
+        min-height: 160px;
+        padding: 1.25rem 1.35rem 1.25rem 0.35rem;
+        border: none;
+    }
+
+    .whats-new-shot {
+        height: 160px;
+    }
+
+    .whats-new-shot img {
+        height: 310px;
+        max-width: none;
+    }
+
+    .whats-new-card h3 {
+        font-size: 1.25rem;
+    }
+}
+
 /* ── Light / Dark mode preview ── */
 .project-theme-section {
     margin-top: 2.5rem;
