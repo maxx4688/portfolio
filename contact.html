@@ -6,7 +6,7 @@
     <title>Contact — Ashish Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body>
     <header>
@@ -18,8 +18,8 @@
                 <a href="about.html" class="nav-link"><span>About</span></a>
                 <a href="projects.html" class="nav-link"><span>Projects</span></a>
                 <a href="contact.html" class="nav-link active"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
-                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
                 </button>
             </nav>
         </div>
@@ -27,9 +27,21 @@
 
     <main>
         <section class="hero hero-page">
-            <p class="hero-label">Get in Touch</p>
-            <h1>Let's <span class="highlight">Connect</span></h1>
+            <p class="hero-label">Contact</p>
+            <h1>
+                <span class="hero-line">Let's</span>
+                <span class="hero-line highlight">Connect</span>
+            </h1>
             <p class="subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to collaborate.</p>
+            <div class="hero-actions">
+                <a href="mailto:alexmaxx8055@gmail.com" class="cta-button cta-primary">
+                    <span class="cta-label">Send Email</span>
+                </a>
+                <a href="https://github.com/maxx4688" class="cta-text cta-text--dark" target="_blank" rel="noopener noreferrer">
+                    <span>Visit GitHub</span>
+                    <span class="cta-text-arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
         </section>
 
         <div class="contact-grid">

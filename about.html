@@ -6,7 +6,7 @@
     <title>About Ashish — Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body>
     <header>
@@ -18,8 +18,8 @@
                 <a href="about.html" class="nav-link active"><span>About</span></a>
                 <a href="projects.html" class="nav-link"><span>Projects</span></a>
                 <a href="contact.html" class="nav-link"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
-                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
                 </button>
             </nav>
         </div>
@@ -27,17 +27,19 @@
 
     <main>
         <section class="hero hero-page">
-            <p class="hero-label">About Me</p>
-            <h1>About <span class="highlight">Ashish</span></h1>
+            <p class="hero-label">Profile</p>
+            <h1>
+                <span class="hero-line">About</span>
+                <span class="hero-line highlight">Ashish</span>
+            </h1>
             <p class="subtitle">Creative Developer &amp; Problem Solver building thoughtful digital experiences.</p>
             <div class="hero-actions">
                 <a href="contact.html" class="cta-button cta-primary">
-                    <span class="cta-shine"></span>
                     <span class="cta-label">Let's Connect</span>
                 </a>
-                <a href="projects.html" class="cta-button cta-secondary">
-                    <span class="cta-fill"></span>
-                    <span class="cta-label">View Projects</span>
+                <a href="projects.html" class="cta-text cta-text--dark">
+                    <span>View projects</span>
+                    <span class="cta-text-arrow" aria-hidden="true">→</span>
                 </a>
             </div>
         </section>

@@ -6,7 +6,7 @@
     <title>Smart Home Dashboard — Project Overview</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body class="project-detail">
     <header>
@@ -18,8 +18,8 @@
                 <a href="../about.html" class="nav-link"><span>About</span></a>
                 <a href="../projects.html" class="nav-link active"><span>Projects</span></a>
                 <a href="../contact.html" class="nav-link"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
-                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
                 </button>
             </nav>
         </div>

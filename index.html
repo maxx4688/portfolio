@@ -6,9 +6,9 @@
     <title>Ashish — Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
-<body>
+<body class="home">
     <header>
         <div class="header-inner">
             <a href="index.html" class="logo-link">
@@ -18,36 +18,62 @@
                 <a href="about.html" class="nav-link"><span>About</span></a>
                 <a href="projects.html" class="nav-link"><span>Projects</span></a>
                 <a href="contact.html" class="nav-link"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
-                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <p class="hero-label">Portfolio</p>
-            <h1>Hello, I'm <span class="highlight">Ashish</span></h1>
-            <p class="subtitle">Creative Developer &amp; Designer crafting thoughtful digital experiences.</p>
-            <div class="hero-actions">
-                <a href="projects.html" class="cta-button cta-primary">
-                    <span class="cta-shine"></span>
-                    <span class="cta-label">View Projects</span>
-                </a>
-                <a href="contact.html" class="cta-button cta-secondary">
-                    <span class="cta-fill"></span>
-                    <span class="cta-label">Get in Touch</span>
-                </a>
-            </div>
-        </section>
+    <section class="hero-cinematic">
+        <div class="hero-cinematic__media" aria-hidden="true">
+            <video class="home-video-el" autoplay muted loop playsinline preload="auto">
+                <source src="assets/todoo/todoo_ad.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-cinematic__shade"></div>
+        <div class="hero-cinematic__content">
+            <p class="hero-label">The beginning of a craft</p>
+            <h1>
+                <span class="hero-line">The next chapter</span>
+                <span class="hero-line">of Ashish</span>
+            </h1>
+            <a href="projects.html" class="cta-text">
+                <span>Discover selected work</span>
+                <span class="cta-text-arrow" aria-hidden="true">→</span>
+            </a>
+        </div>
+        <button type="button" class="hero-cinematic__mute home-video-mute" aria-label="Unmute video" aria-pressed="false">
+            <span class="home-video-mute-icon" aria-hidden="true">🔇</span>
+        </button>
+    </section>
 
+    <section class="editorial-band reveal">
+        <div class="editorial-band__inner">
+            <p class="hero-label">Making</p>
+            <div class="editorial-band__grid">
+                <h2>Pure Focus</h2>
+                <div class="editorial-band__copy">
+                    <p>I build digital products with the same discipline as handcrafted machines — fewer parts, clearer purpose, and details that hold up when you look closely.</p>
+                    <p>From mobile apps to brand systems, the work favors calm interfaces, deliberate motion, and engineering that stays out of the way.</p>
+                    <a href="about.html" class="cta-text cta-text--dark">
+                        <span>Explore the profile</span>
+                        <span class="cta-text-arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-band">
+        <div class="home-band__intro reveal">
+            <p class="hero-label">Since 2022</p>
+            <h2>Selected Paths</h2>
+            <p>Three ways into the work — journey, projects, and conversation.</p>
+        </div>
         <div class="sections">
             <a href="about.html" class="section-card">
                 <div class="card-frame">
-                    <span class="card-spotlight" aria-hidden="true"></span>
-                    <span class="card-border" aria-hidden="true"></span>
-                    <span class="card-shine" aria-hidden="true"></span>
                     <div class="card-content">
                         <span class="card-number">01</span>
                         <h2>About</h2>
@@ -62,9 +88,6 @@
 
             <a href="projects.html" class="section-card">
                 <div class="card-frame">
-                    <span class="card-spotlight" aria-hidden="true"></span>
-                    <span class="card-border" aria-hidden="true"></span>
-                    <span class="card-shine" aria-hidden="true"></span>
                     <div class="card-content">
                         <span class="card-number">02</span>
                         <h2>Projects</h2>
@@ -79,9 +102,6 @@
 
             <a href="contact.html" class="section-card">
                 <div class="card-frame">
-                    <span class="card-spotlight" aria-hidden="true"></span>
-                    <span class="card-border" aria-hidden="true"></span>
-                    <span class="card-shine" aria-hidden="true"></span>
                     <div class="card-content">
                         <span class="card-number">03</span>
                         <h2>Contact</h2>
@@ -94,16 +114,23 @@
                 </div>
             </a>
         </div>
-    </main>
+    </section>
 
-    <section class="home-video">
-        <video class="home-video-el" autoplay muted loop playsinline preload="auto">
-            <source src="assets/todoo/todoo_ad.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <button type="button" class="home-video-mute" aria-label="Unmute video" aria-pressed="false">
-            <span class="home-video-mute-icon" aria-hidden="true">🔇</span>
-        </button>
+    <section class="cta-band reveal">
+        <div class="cta-band__inner">
+            <p class="hero-label">Next</p>
+            <h2>Register a conversation</h2>
+            <p>Join me for collaborations, freelance briefs, or a short note about what you're building next.</p>
+            <div class="hero-actions">
+                <a href="contact.html" class="cta-button cta-primary">
+                    <span class="cta-label">Get in Touch</span>
+                </a>
+                <a href="projects.html" class="cta-text cta-text--dark">
+                    <span>Browse projects</span>
+                    <span class="cta-text-arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>

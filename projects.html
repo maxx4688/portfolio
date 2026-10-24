@@ -6,7 +6,7 @@
     <title>Projects — Ashish Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body>
     <header>
@@ -18,8 +18,8 @@
                 <a href="about.html" class="nav-link"><span>About</span></a>
                 <a href="projects.html" class="nav-link active"><span>Projects</span></a>
                 <a href="contact.html" class="nav-link"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
-                    <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
                 </button>
             </nav>
         </div>
@@ -28,7 +28,10 @@
     <main>
         <section class="hero hero-page">
             <p class="hero-label">Work</p>
-            <h1>My <span class="highlight">Projects</span></h1>
+            <h1>
+                <span class="hero-line">Selected</span>
+                <span class="hero-line highlight">Projects</span>
+            </h1>
             <p class="subtitle">A collection of apps, websites, and designs that showcase my skills in development and design.</p>
         </section>
 
@@ -60,6 +63,48 @@
                         <div class="project-footer">
                             <a href="projects/to-doo.html" class="project-cta">View Project <span aria-hidden="true">→</span></a>
                             <a href="https://github.com/maxx4688" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card project-card--web" data-category="web">
+                <div class="card-frame">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="card-border" aria-hidden="true"></span>
+                    <span class="card-shine" aria-hidden="true"></span>
+                    <div class="project-browser">
+                        <div class="browser-chrome">
+                            <span class="browser-dots" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                            </span>
+                            <span class="browser-url">maxx4688.github.io/havencraft</span>
+                            <span class="browser-live">Live</span>
+                        </div>
+                        <div class="project-media project-media--web">
+                            <img src="assets/havencraft/HC.png" alt="Haven Craft wallpaper website hero" class="project-image">
+                            <div class="web-preview-overlay">
+                                <span class="web-preview-label">Website</span>
+                                <p class="web-preview-title">Haven Craft</p>
+                                <p class="web-preview-sub">We priorities elegance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-kicker">
+                            <span class="project-badge project-badge--inline">Website</span>
+                        </div>
+                        <h2 class="project-title">Haven Craft</h2>
+                        <p class="project-description">An elegance-first wallpaper brand site — AMOLED, scenery, desktop, and minimal collections with soft motion, device mockups, and a path into the .PNG app.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="projects/havencraft.html" class="project-cta">View Project <span aria-hidden="true">→</span></a>
+                            <a href="https://maxx4688.github.io/havencraft/" class="project-cta project-cta--ghost" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
                         </div>
                     </div>
                 </div>
@@ -135,7 +180,7 @@
                             <span class="project-status">You're browsing it right now</span>
                         </div>
                         <h2 class="project-title">Portfolio Website</h2>
-                        <p class="project-description">This very site — a hand-built portfolio with 3D tilt cards, cursor spotlights, animated gradient borders, masonry galleries, and an image preview lightbox. No frameworks, just clean HTML, CSS, and JavaScript.</p>
+                        <p class="project-description">This very site — a hand-built portfolio with cinematic motion, editorial typography, masonry galleries, and an image preview lightbox. No frameworks, just clean HTML, CSS, and JavaScript.</p>
                         <div class="project-tags">
                             <span class="project-tag">HTML</span>
                             <span class="project-tag">CSS</span>

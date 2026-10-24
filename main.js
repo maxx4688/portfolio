@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lenisScript.onload = () => {
             if (!window.Lenis) return;
             const lenis = new window.Lenis({
-                duration: 1.2,
+                duration: 1.35,
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                 smoothWheel: true,
                 touchMultiplier: 1.5,
@@ -31,18 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleBtn.setAttribute('aria-pressed', String(isLight));
             themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
         };
-        syncToggle(root.getAttribute('data-theme') || 'dark');
+        syncToggle(root.getAttribute('data-theme') || 'light');
         themeToggleBtn.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             root.setAttribute('data-theme', next);
             try { localStorage.setItem('theme', next); } catch (e) {}
             syncToggle(next);
         });
     }
 
-    const tiltStrength = 10;
-    const liftAmount = 8;
-    const tiltSelectors = '.section-card, .content-panel, .project-card, .contact-card';
+    const revealSelectors = [
+        '.section-card',
+        '.content-panel',
+        '.project-card',
+        '.contact-card',
+        '.skill-bar-fill',
+        '.poster-item',
+        '.project-video-wrap',
+        '.reveal',
+        '.whats-new-card',
+    ].join(', ');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -55,38 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll(`${tiltSelectors}, .skill-bar-fill, .poster-item, .project-video-wrap`).forEach((el, index) => {
-        if (el.matches(tiltSelectors) || el.matches('.poster-item') || el.matches('.project-video-wrap')) {
+    document.querySelectorAll(revealSelectors).forEach((el, index) => {
+        if (!el.classList.contains('skill-bar-fill')) {
             el.style.setProperty('--stagger', `${(index % 6) * 0.08}s`);
         }
         revealObserver.observe(el);
-    });
-
-    document.querySelectorAll(tiltSelectors).forEach(card => {
-        if (card.classList.contains('project-video-wrap') || card.classList.contains('whats-new-card')) return;
-        const frame = card.querySelector('.card-frame');
-        if (!frame) return;
-
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const px = (x / rect.width) * 100;
-            const py = (y / rect.height) * 100;
-            const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -tiltStrength;
-            const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * tiltStrength;
-
-            card.style.setProperty('--mx', `${px}%`);
-            card.style.setProperty('--my', `${py}%`);
-            frame.style.transform =
-                `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-${liftAmount}px) scale(1.02)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            frame.style.transform = '';
-            card.style.removeProperty('--mx');
-            card.style.removeProperty('--my');
-        });
     });
 
     document.querySelectorAll('.cta-button, .nav-link, .filter-button, .socials').forEach(el => {
@@ -142,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* Full-bleed home page video mute toggle */
+    /* Cinematic / home video mute toggle */
     const homeVideo = document.querySelector('.home-video-el');
     const homeVideoMute = document.querySelector('.home-video-mute');
     if (homeVideo && homeVideoMute) {
