@@ -3,138 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashish — Portfolio</title>
+    <title>Ashish — Developer &amp; Designer</title>
+    <meta name="description" content="Ashish is a front-end app developer and designer crafting calm, considered mobile apps, websites and brand systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
-    <script>(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+    <link rel="stylesheet" href="motion.css">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');var t;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);})();</script>
 </head>
 <body class="home">
-    <header>
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="assets/logo.png" alt="Ashish's signature" class="logo">
-            </a>
-            <nav>
-                <a href="about.html" class="nav-link"><span>About</span></a>
-                <a href="projects.html" class="nav-link"><span>Projects</span></a>
-                <a href="contact.html" class="nav-link"><span>Contact</span></a>
-                <button type="button" class="theme-toggle-btn" aria-label="Switch to dark mode" aria-pressed="true">
-                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-                </button>
-            </nav>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-bar">
+                <a href="index.html" class="brand" aria-label="Ashish — home">
+                    <span class="brand-logo" aria-hidden="true"><img src="assets/logo.png" alt=""></span>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link">Work</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle color theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    </button>
+                    <a href="mailto:ashish.maxx4688@gmail.com" class="btn btn-primary btn-sm header-cta">Let's talk</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero-cinematic">
-        <div class="hero-cinematic__media" aria-hidden="true">
-            <video class="home-video-el" autoplay muted loop playsinline preload="auto">
-                <source src="assets/todoo/todoo_ad.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-cinematic__shade"></div>
-        <div class="hero-cinematic__content">
-            <p class="hero-label">The beginning of a craft</p>
-            <h1>
-                <span class="hero-line">The next chapter</span>
-                <span class="hero-line">of Ashish</span>
-            </h1>
-            <a href="projects.html" class="cta-text">
-                <span>Discover selected work</span>
-                <span class="cta-text-arrow" aria-hidden="true">→</span>
-            </a>
-        </div>
-        <button type="button" class="hero-cinematic__mute home-video-mute" aria-label="Unmute video" aria-pressed="false">
-            <span class="home-video-mute-icon" aria-hidden="true">🔇</span>
-        </button>
-    </section>
-
-    <section class="editorial-band reveal">
-        <div class="editorial-band__inner">
-            <p class="hero-label">Making</p>
-            <div class="editorial-band__grid">
-                <h2>Pure Focus</h2>
-                <div class="editorial-band__copy">
-                    <p>I build digital products with the same discipline as handcrafted machines — fewer parts, clearer purpose, and details that hold up when you look closely.</p>
-                    <p>From mobile apps to brand systems, the work favors calm interfaces, deliberate motion, and engineering that stays out of the way.</p>
-                    <a href="about.html" class="cta-text cta-text--dark">
-                        <span>Explore the profile</span>
-                        <span class="cta-text-arrow" aria-hidden="true">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="home-band">
-        <div class="home-band__intro reveal">
-            <p class="hero-label">Since 2022</p>
-            <h2>Selected Paths</h2>
-            <p>Three ways into the work — journey, projects, and conversation.</p>
-        </div>
-        <div class="sections">
-            <a href="about.html" class="section-card">
-                <div class="card-frame">
-                    <div class="card-content">
-                        <span class="card-number">01</span>
-                        <h2>About</h2>
-                        <p>A closer look at my journey, skills, and the philosophy behind my work.</p>
-                        <span class="card-link">
-                            <span class="card-link-text">Explore profile</span>
-                            <span class="card-link-arrow" aria-hidden="true">→</span>
-                        </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="projects.html" class="section-card">
-                <div class="card-frame">
-                    <div class="card-content">
-                        <span class="card-number">02</span>
-                        <h2>Projects</h2>
-                        <p>Selected work spanning app development, web design, and user interface craft.</p>
-                        <span class="card-link">
-                            <span class="card-link-text">View work</span>
-                            <span class="card-link-arrow" aria-hidden="true">→</span>
-                        </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="contact.html" class="section-card">
-                <div class="card-frame">
-                    <div class="card-content">
-                        <span class="card-number">03</span>
-                        <h2>Contact</h2>
-                        <p>Open to collaborations, freelance projects, and conversations about new ideas.</p>
-                        <span class="card-link">
-                            <span class="card-link-text">Send a message</span>
-                            <span class="card-link-arrow" aria-hidden="true">→</span>
-                        </span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section class="cta-band reveal">
-        <div class="cta-band__inner">
-            <p class="hero-label">Next</p>
-            <h2>Register a conversation</h2>
-            <p>Join me for collaborations, freelance briefs, or a short note about what you're building next.</p>
-            <div class="hero-actions">
-                <a href="contact.html" class="cta-button cta-primary">
-                    <span class="cta-label">Get in Touch</span>
+    <main>
+        <section class="hero container">
+            <div class="hero-badge reveal"><span class="status-dot">Available for freelance &amp; collaborations</span></div>
+            <p class="hero-name reveal">Hi, I'm <em>Ashish</em></p>
+            <h1 class="hero-title reveal">Crafting calm, <em>considered</em> digital products.</h1>
+            <p class="lead reveal">I'm a front-end app developer and designer building mobile apps, websites and brand systems with fewer parts, clearer purpose and details that hold up when you look closely.</p>
+            <div class="hero-actions reveal">
+                <a href="projects.html" class="btn btn-primary">View selected work
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
-                <a href="projects.html" class="cta-text cta-text--dark">
-                    <span>Browse projects</span>
-                    <span class="cta-text-arrow" aria-hidden="true">→</span>
+                <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+            </div>
+            <dl class="hero-stats reveal">
+                <div><dt>Building since</dt><dd>2022</dd></div>
+                <div><dt>Projects</dt><dd>08 shipped &amp; in progress</dd></div>
+                <div><dt>Focus</dt><dd>Flutter · Graphics</dd></div>
+            </dl>
+        </section>
+
+        <section class="showreel container reveal" aria-label="Showreel">
+            <div class="showreel-frame">
+                <video class="home-video-el" autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/todoo/todoo_ad.mp4" type="video/mp4">
+                </video>
+                <div class="showreel-caption">
+                    <p class="eyebrow">Showreel</p>
+                    <p>To doo — product film</p>
+                </div>
+                <button type="button" class="icon-btn home-video-mute" aria-label="Unmute video" aria-pressed="false">
+                    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+                    <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Selected work</p>
+                    <h2 class="section-title">Recent projects</h2>
+                </div>
+                <a href="projects.html" class="link-arrow">All projects <span aria-hidden="true">→</span></a>
+            </div>
+
+            <div class="work-grid">
+                <a href="projects/havencraft.html" class="work-card work-card--wide reveal">
+                    <div class="work-media">
+                        <img src="assets/havencraft/hero.png" alt="Haven Craft website hero section" loading="lazy">
+                        <span class="work-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </div>
+                    <div class="work-info">
+                        <div><h3>Haven Craft</h3><p>Elegance-first wallpaper brand website</p></div>
+                        <span class="work-year">Web</span>
+                    </div>
+                </a>
+
+                <a href="projects/to-doo.html" class="work-card work-card--narrow reveal">
+                    <div class="work-media work-media--contain" style="--tint: linear-gradient(135deg, #38bdf8, #1d4ed8)">
+                        <img src="assets/todoo/to_doo.png" alt="To doo app icon" loading="lazy">
+                        <span class="work-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </div>
+                    <div class="work-info">
+                        <div><h3>To doo</h3><p>Notes &amp; tasks app for Android</p></div>
+                        <span class="work-year">Flutter</span>
+                    </div>
+                </a>
+
+                <a href="projects/dotpng.html" class="work-card work-card--narrow reveal">
+                    <div class="work-media">
+                        <img src="assets/dot/promo_dot.png" alt="DotPNG wallpaper app promotional artwork" loading="lazy">
+                        <span class="work-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </div>
+                    <div class="work-info">
+                        <div><h3>DotPNG</h3><p>Curated wallpaper app</p></div>
+                        <span class="work-year">Flutter · Swift</span>
+                    </div>
+                </a>
+
+                <a href="projects/todoo-web.html" class="work-card work-card--wide reveal">
+                    <div class="work-media">
+                        <img src="assets/todoo/web/features.png" alt="ToDoo web app features page" loading="lazy">
+                        <span class="work-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </div>
+                    <div class="work-info">
+                        <div><h3>ToDoo Web</h3><p>Cloud-synced notes &amp; to-do workspace</p></div>
+                        <span class="work-year">Web</span>
+                    </div>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 Ashish. All rights reserved.</p>
+        <section class="section container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">What I do</p>
+                    <h2 class="section-title">Design and engineering, <em>in one pair of hands.</em></h2>
+                </div>
+            </div>
+            <div class="services">
+                <article class="service reveal">
+                    <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+                    <h3>Mobile apps</h3>
+                    <p>Cross-platform Flutter apps with clean architecture, cloud sync and interfaces tuned for one-handed, everyday use.</p>
+                    <ul class="chips"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>Supabase</li></ul>
+                </article>
+                <article class="service reveal">
+                    <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg></span>
+                    <h3>Websites</h3>
+                    <p>Hand-built, framework-free sites with editorial typography, considered motion and fast, accessible markup.</p>
+                    <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                </article>
+                <article class="service reveal">
+                    <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span>
+                    <h3>UI &amp; brand design</h3>
+                    <p>Interface design, logos and visual systems — from first sketch in Figma to polished, production-ready assets.</p>
+                    <ul class="chips"><li>Figma</li><li>Illustrator</li><li>Motion</li></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <p class="eyebrow reveal">Approach</p>
+            <p class="statement reveal">I build digital products with the discipline of handcrafted machines — <span class="muted">fewer parts, clearer purpose, and calm interfaces that stay out of the way.</span></p>
+            <div class="statement-foot reveal">
+                <a href="about.html" class="link-arrow">More about me <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="cta-panel reveal">
+                <p class="eyebrow">Next</p>
+                <h2>Have a project in mind? <em>Let's talk.</em></h2>
+                <p>Collaborations, freelance briefs, or a short note about what you're building next — I'd love to hear about it.</p>
+                <div class="hero-actions">
+                    <a href="mailto:ashish.maxx4688@gmail.com" class="btn btn-primary">Start a conversation</a>
+                    <a href="projects.html" class="btn btn-ghost">Browse projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand"><span class="brand-logo" aria-hidden="true"><img src="assets/logo.png" alt=""></span><span>Ashish<span class="brand-dot">.</span></span></a>
+                    <p>Front-end app developer &amp; designer crafting calm, considered digital products.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Work</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Elsewhere</h4>
+                    <ul>
+                        <li><a href="mailto:ashish.maxx4688@gmail.com">Email</a></li>
+                        <li><a href="https://github.com/maxx4688" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://x.com/maxx4688" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+                        <li><a href="https://www.instagram.com/maxx4688" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Ashish. All rights reserved.</span>
+                <span class="status-dot">Available for new work</span>
+            </div>
+        </div>
     </footer>
 
     <script src="main.js"></script>

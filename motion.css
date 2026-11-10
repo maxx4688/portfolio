@@ -1,0 +1,193 @@
+/* Loaded last so these hover/motion rules win over page styles */
+/* ==========================================================================
+   Motion system — one hover language for buttons, cards and images
+   ========================================================================== */
+
+/* ── Buttons: fill grows from the cursor + magnetic pull ──────────────── */
+.btn,
+.cta-button,
+.icon-btn,
+.theme-toggle-btn,
+.theme-corner-btn,
+.back-link,
+.filter-button,
+.nav-link,
+.topic span {
+    --fill: var(--invert-bg);
+    --fill-text: var(--invert-text);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+        color 0.45s var(--ease),
+        border-color 0.45s var(--ease),
+        box-shadow 0.45s var(--ease),
+        background-color 0.3s ease,
+        translate 0.5s var(--ease),
+        scale 0.2s ease;
+}
+
+.btn::before,
+.cta-button::before,
+.icon-btn::before,
+.theme-toggle-btn::before,
+.theme-corner-btn::before,
+.back-link::before,
+.filter-button::before,
+.nav-link::before,
+.topic span::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: 260%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--fill);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.65s var(--ease);
+    pointer-events: none;
+}
+
+:is(.btn, .cta-button, .icon-btn, .theme-toggle-btn, .theme-corner-btn, .back-link, .filter-button, .nav-link, .topic span):hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+:is(.btn, .cta-button, .icon-btn, .theme-toggle-btn, .theme-corner-btn, .back-link, .filter-button, .nav-link, .topic span):hover {
+    color: var(--fill-text);
+    /* once the fill has spread, match the background so no rim shows at the rounded edge */
+    background-color: var(--fill);
+    transition-delay: 0s, 0s, 0s, 0.35s, 0s, 0s;
+}
+
+:is(.btn, .cta-button, .icon-btn, .theme-toggle-btn, .theme-corner-btn, .back-link):active { scale: 0.96; }
+
+/* Fill colours per variant */
+.btn-primary, .cta-primary { --fill: var(--accent); --fill-text: #fff; }
+.btn-ghost:hover, .cta-secondary:hover, .back-link:hover { border-color: var(--invert-bg); }
+.icon-btn:hover, .theme-toggle-btn:hover { border-color: var(--invert-bg); }
+.cta-panel .btn-primary { --fill: var(--accent); --fill-text: #fff; }
+.cta-panel .btn-ghost { --fill: var(--invert-text); --fill-text: var(--invert-bg); }
+.showreel-frame .icon-btn { --fill: #fff; --fill-text: #111; }
+.theme-corner-btn { --fill: #111; --fill-text: #fff; }
+.nav-link, .filter-button { --fill: var(--surface-2); --fill-text: var(--text); }
+.filter-button.active { --fill: var(--surface); }
+.topic input:checked + span { --fill: var(--invert-bg); }
+
+/* Icons and arrows inside buttons glide on hover */
+.btn svg, .icon-btn svg, .theme-toggle-btn svg { transition: transform 0.5s var(--ease); }
+.btn:hover svg { transform: translateX(4px); }
+.icon-btn:hover svg, .theme-toggle-btn:hover svg { transform: rotate(-18deg) scale(1.08); }
+
+/* ── Cards: cursor-follow tilt + spotlight ────────────────────────────── */
+.tilt {
+    --rx: 0deg;
+    --ry: 0deg;
+    --lift: 0px;
+    transform: perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift));
+    transform-style: preserve-3d;
+    transition:
+        transform 0.6s var(--ease),
+        box-shadow 0.6s var(--ease),
+        border-color 0.4s ease;
+    will-change: transform;
+}
+
+.tilt:hover { --lift: -6px; }
+.tilt.is-tracking { transition: transform 0.15s linear, box-shadow 0.6s var(--ease), border-color 0.4s ease; }
+
+.spot { position: relative; }
+
+.spot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background:
+        radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 55%);
+    transition: opacity 0.5s ease;
+}
+
+/* Spotlight border ring */
+.spot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--accent), transparent 60%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    transition: opacity 0.5s ease;
+}
+
+.spot:hover::after,
+.spot:hover::before { opacity: 1; }
+
+.tilt:hover,
+.spot:hover { box-shadow: var(--shadow-md); }
+
+/* ── Images: wipe-in reveal + slow zoom on hover ──────────────────────── */
+:is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot, .showreel-frame, .theme-preview-frame),
+.poster-item > img {
+    --radius: var(--r-lg);
+}
+
+/* Media that sits inside a card: the card already rounds the corners */
+.project-media, .browser-viewport, .whats-new-shot { --radius: 0px; }
+.project-poster-main, .showreel-frame, .theme-preview-frame { --radius: var(--r-xl); }
+
+.js .reveal :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
+.js .reveal.showreel .showreel-frame,
+.js .poster-item.reveal > img,
+.js .theme-preview-frame.reveal {
+    clip-path: inset(100% 0 0 0 round var(--radius));
+    transition: clip-path 1.2s var(--ease) calc(var(--stagger, 0s) + 0.1s);
+}
+
+.js .reveal.visible :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
+.js .reveal.showreel.visible .showreel-frame,
+.js .poster-item.reveal.visible > img,
+.js .theme-preview-frame.reveal.visible {
+    clip-path: inset(0 0 0 0 round var(--radius));
+}
+
+/* Image settles from a slight zoom as it is revealed (uses `scale`, so hover `transform` still composes) */
+:is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot) img,
+.showreel-frame video {
+    scale: 1.18;
+    transition: scale 1.6s var(--ease) calc(var(--stagger, 0s) + 0.1s), transform 1s var(--ease);
+}
+
+.reveal.visible :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot) img,
+.reveal.visible .showreel-frame video,
+html:not(.js) :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot) img,
+html:not(.js) .showreel-frame video { scale: 1; }
+
+/* Hover zoom */
+.work-card:hover .work-media img,
+.project-card:hover .project-media img,
+.project-poster-main:hover img,
+.browser-mock:hover .browser-viewport img,
+.whats-new-card:hover .whats-new-shot img { transform: scale(1.06); }
+
+.poster-item > img { transition: clip-path 1.2s var(--ease) calc(var(--stagger, 0s) + 0.1s), transform 0.8s var(--ease), box-shadow 0.8s var(--ease); }
+.poster-item > img:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
+    .js .reveal.showreel .showreel-frame,
+    .js .poster-item.reveal > img,
+    .js .theme-preview-frame.reveal { clip-path: none; }
+    :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot) img,
+    .showreel-frame video { scale: 1; }
+    .tilt { transform: none; }
+}
