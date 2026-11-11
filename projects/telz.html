@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telz — Project Overview</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../pages.css">
+    <link rel="stylesheet" href="../motion.css">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');var t;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);})();</script>
+</head>
+<body class="project-detail">
+    <header class="site-header">
+        <div class="container">
+            <div class="header-bar">
+                <a href="../index.html" class="brand" aria-label="Ashish — home">
+                    <span class="brand-logo" aria-hidden="true"><img src="../assets/logo.png" alt=""></span>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="../about.html" class="nav-link">About</a>
+                    <a href="../projects.html" class="nav-link active" aria-current="page">Work</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle color theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    </button>
+                    <a href="mailto:ashish.maxx4688@gmail.com" class="btn btn-primary btn-sm header-cta">Let's talk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <a href="../projects.html" class="back-link">← All Projects</a>
+
+        <section class="project-hero">
+            <div class="project-poster-main poster-main--telz">
+                <img src="../assets/telz/Icon.png" alt="Telz app icon: a yellow chat bubble with two eyes">
+            </div>
+            <div class="project-hero-info">
+                <p class="hero-label">Mobile App · Beta</p>
+                <h1>Tel<span class="highlight">z</span></h1>
+                <p class="subtitle">A chat app that telz what others wanna talk to you. A clean, minimal messenger: pick a unique username, find people, and start talking in real time.</p>
+                <div class="project-meta">
+                    <span class="meta-chip">Flutter</span>
+                    <span class="meta-chip">Firebase</span>
+                    <span class="meta-chip">Riverpod</span>
+                    <span class="meta-chip">Supabase</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="../contact.html" class="cta-button cta-primary">
+                        <span>Join the Beta</span>
+                    </a>
+                    <a href="../projects.html" class="cta-button cta-secondary">
+                        <span>All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-sections">
+            <article class="content-panel">
+                <div class="card-frame">
+                    <div class="card-content">
+                        <h2>Overview</h2>
+                        <p>Telz is a clean, minimal messenger built with Flutter. Pick a unique username, find people, and start talking, in real time, with notifications that actually reach you.</p>
+                        <p>Conversations sync instantly through Firebase Realtime Database and are cached on the device, so chats open quickly. Cloud Messaging delivers new messages even when the app is closed.</p>
+                        <p class="beta-note"><span aria-hidden="true">🚧</span> Beta testing is under progress, and feedback is very welcome.</p>
+                        <div class="detail-grid">
+                            <div class="detail-stat"><strong>Role</strong><span>Full Stack Developer & Designer</span></div>
+                            <div class="detail-stat"><strong>Platform</strong><span>Android</span></div>
+                            <div class="detail-stat"><strong>Status</strong><span>Beta testing</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-panel">
+                <div class="card-frame">
+                    <div class="card-content">
+                        <h2>Built With</h2>
+                        <ul class="feature-list">
+                            <li><strong>Flutter</strong> for a single, fast cross-platform codebase</li>
+                            <li><strong>Firebase Auth</strong> for secure sign-up and sign-in</li>
+                            <li><strong>Realtime Database</strong> for messages that sync instantly</li>
+                            <li><strong>Cloud Messaging</strong> for push notifications</li>
+                            <li><strong>Riverpod</strong> for state management</li>
+                            <li><strong>Supabase</strong> for FCM Admin side deployment and profile picture storage</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <section class="feature-groups-section">
+            <h2>Features</h2>
+            <p>Everything you need to start a conversation, and nothing that gets in the way.</p>
+            <div class="feature-groups">
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">💬</span>
+                            <h3>Real-time chat</h3>
+                            <ul class="feature-list">
+                                <li>One-to-one conversations that sync instantly</li>
+                                <li>Home screen with all your conversations, latest message preview and time</li>
+                                <li>Unread badges so you never miss who is waiting on you</li>
+                                <li>Typing indicator, so you know when the other person is replying</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">🔍</span>
+                            <h3>Find people</h3>
+                            <ul class="feature-list">
+                                <li>Search for people by their username</li>
+                                <li>Jump straight from a profile into a conversation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">🔔</span>
+                            <h3>Push notifications</h3>
+                            <ul class="feature-list">
+                                <li>Get notified about new messages even when the app is closed</li>
+                                <li>Turn notifications on or off whenever you like</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">🙋</span>
+                            <h3>Your profile</h3>
+                            <ul class="feature-list">
+                                <li>Choose a unique <code>@username</code> with live availability checking while you type</li>
+                                <li>Edit your profile any time</li>
+                                <li>Add and manage your profile picture</li>
+                                <li>Copy your email and username with a tap</li>
+                                <li>Change your password with an emailed reset link</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">🎨</span>
+                            <h3>Made to feel yours</h3>
+                            <ul class="feature-list">
+                                <li>Light and dark themes</li>
+                                <li>Adjustable message text size</li>
+                                <li>Optional haptic feedback</li>
+                                <li>Typing indicator toggle for more privacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="content-panel">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <span class="feature-group-icon" aria-hidden="true">⚡</span>
+                            <h3>Fast and reliable</h3>
+                            <ul class="feature-list">
+                                <li>Messages and conversations are cached on your device, so chats open quickly</li>
+                                <li>Secure sign-up and sign-in</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="poster-section">
+            <h2>Brand</h2>
+            <p>The Telz mark: a friendly chat bubble that looks back at you.</p>
+            <div class="poster-grid poster-grid--pair">
+                <div class="poster-item">
+                    <img class="poster-img--cutout poster-img--telz" src="../assets/telz/Icon.png" alt="Telz app icon">
+                    <span class="poster-caption">App Icon</span>
+                </div>
+                <div class="poster-item">
+                    <img class="poster-img--paper" src="../assets/telz/Telz.png" alt="Telz wordmark">
+                    <span class="poster-caption">Wordmark</span>
+                </div>
+            </div>
+        </section>
+
+        <nav class="project-nav-footer">
+            <a href="dotpng.html">← DotPNG</a>
+            <a href="smart-home-dashboard.html">Next: Smart Home Dashboard →</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand"><span class="brand-logo" aria-hidden="true"><img src="../assets/logo.png" alt=""></span><span>Ashish<span class="brand-dot">.</span></span></a>
+                    <p>App Developer &amp; designer crafting calm, considered digital products.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Work</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Elsewhere</h4>
+                    <ul>
+                        <li><a href="mailto:ashish.maxx4688@gmail.com">Email</a></li>
+                        <li><a href="https://github.com/maxx4688" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://x.com/maxx4688" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+                        <li><a href="https://www.instagram.com/maxx4688" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Ashish. All rights reserved.</span>
+                <span class="status-dot">Available for new work</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

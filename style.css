@@ -265,20 +265,16 @@ body::before {
     height: 46px;
     margin-block: -6px;
     flex: none;
-    overflow: hidden;
     transition: transform 0.4s var(--ease);
 }
 
+/* The PNG is drawn edge to edge, so fit it whole: no zoom, no clipping */
 .brand-logo img {
+    display: block;
     width: 100%;
     height: 100%;
-    transform: scale(1.5);
-    /* brightness(0) turns every visible pixel pure black, whatever the PNG's colour */
-    filter: brightness(0);
+    object-fit: contain;
 }
-
-/* Dark mode: same black silhouette, flipped to pure white */
-:root[data-theme="dark"] .brand-logo img { filter: brightness(0) invert(1); }
 
 .brand:hover .brand-logo { transform: rotate(-6deg) scale(1.06); }
 .footer-brand .brand-logo { width: 52px; height: 52px; }

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── Reveal on scroll ───────────────────────────────────────── */
     const revealTargets = document.querySelectorAll(
-        '.reveal, .content-panel, .poster-item, .project-hero, .project-nav-footer, .theme-preview-frame'
+        '.reveal, .content-panel, .poster-item, .project-hero, .project-nav-footer, .project-theme-section'
     );
     const reveal = (el) => {
         el.classList.add('visible');
@@ -117,6 +117,25 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.setProperty('--ry', '0deg');
         });
     });
+
+    // What's new phones: parallax away from the cursor (CSS zooms on hover)
+    if (finePointer && !reducedMotion) {
+        document.querySelectorAll('.whats-new-card').forEach((card) => {
+            const shot = card.querySelector('.whats-new-shot');
+            if (!shot) return;
+            card.addEventListener('pointermove', (e) => {
+                const r = card.getBoundingClientRect();
+                shot.classList.add('is-tracking');
+                shot.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+                shot.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+            });
+            card.addEventListener('pointerleave', () => {
+                shot.classList.remove('is-tracking');
+                shot.style.setProperty('--px', '0');
+                shot.style.setProperty('--py', '0');
+            });
+        });
+    }
 
     /* ── Project filters ────────────────────────────────────────── */
     const filterButtons = document.querySelectorAll('.filter-button');

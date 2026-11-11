@@ -70,7 +70,7 @@
 .cta-panel .btn-primary { --fill: var(--accent); --fill-text: #fff; }
 .cta-panel .btn-ghost { --fill: var(--invert-text); --fill-text: var(--invert-bg); }
 .showreel-frame .icon-btn { --fill: #fff; --fill-text: #111; }
-.theme-corner-btn { --fill: #111; --fill-text: #fff; }
+.theme-corner-btn { --fill: #111; --fill-text: #fff; position: absolute; }
 .nav-link, .filter-button { --fill: var(--surface-2); --fill-text: var(--text); }
 .filter-button.active { --fill: var(--surface); }
 .topic input:checked + span { --fill: var(--invert-bg); }
@@ -148,7 +148,8 @@
 .js .reveal :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
 .js .reveal.showreel .showreel-frame,
 .js .poster-item.reveal > img,
-.js .theme-preview-frame.reveal {
+/* The section is observed, not the frame: a fully clipped target never reports as intersecting */
+.js .reveal .theme-preview-frame {
     clip-path: inset(100% 0 0 0 round var(--radius));
     transition: clip-path 1.2s var(--ease) calc(var(--stagger, 0s) + 0.1s);
 }
@@ -156,7 +157,7 @@
 .js .reveal.visible :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
 .js .reveal.showreel.visible .showreel-frame,
 .js .poster-item.reveal.visible > img,
-.js .theme-preview-frame.reveal.visible {
+.js .reveal.visible .theme-preview-frame {
     clip-path: inset(0 0 0 0 round var(--radius));
 }
 
@@ -176,8 +177,14 @@ html:not(.js) .showreel-frame video { scale: 1; }
 .work-card:hover .work-media img,
 .project-card:hover .project-media img,
 .project-poster-main:hover img,
-.browser-mock:hover .browser-viewport img,
-.whats-new-card:hover .whats-new-shot img { transform: scale(1.06); }
+.browser-mock:hover .browser-viewport img { transform: scale(1.06); }
+/* What's new phones: zoom on hover and drift away from the cursor (--px/--py set in main.js) */
+.whats-new-shot img {
+    transform: translate3d(calc(var(--px, 0) * -36px), calc(var(--py, 0) * -28px), 0) scale(var(--pz, 1));
+    will-change: transform;
+}
+.whats-new-card:hover .whats-new-shot { --pz: 1.08; }
+.whats-new-shot.is-tracking img { transition: scale 1.6s var(--ease) calc(var(--stagger, 0s) + 0.1s), transform 0.35s var(--ease); }
 
 .poster-item > img { transition: clip-path 1.2s var(--ease) calc(var(--stagger, 0s) + 0.1s), transform 0.8s var(--ease), box-shadow 0.8s var(--ease); }
 .poster-item > img:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
@@ -186,8 +193,9 @@ html:not(.js) .showreel-frame video { scale: 1; }
     .js .reveal :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot),
     .js .reveal.showreel .showreel-frame,
     .js .poster-item.reveal > img,
-    .js .theme-preview-frame.reveal { clip-path: none; }
+    .js .reveal .theme-preview-frame { clip-path: none; }
     :is(.work-media, .project-media, .project-poster-main, .browser-viewport, .whats-new-shot) img,
     .showreel-frame video { scale: 1; }
     .tilt { transform: none; }
+    .whats-new-card:hover .whats-new-shot { --pz: 1; }
 }
